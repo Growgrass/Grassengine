@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 os.system("git clone https://github.com/Grasscutters/Grasscutter")
-os.chdir("Grasscutter")
+os.chdir(os.getcwd() + "\Grasscutter")
 os.system("del /Q start.cmd start_config.cmd")
 
 jar = os.listdir("Grasscutter")
