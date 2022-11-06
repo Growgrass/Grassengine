@@ -1,8 +1,8 @@
 import os, re, typer
 
-app = typer.Typer(name="Grassengine")
+app = typer.Typer(name="Grassengine", help="Grassengine 도움말")
 
-@app.command(name="main")
+@app.command(name="main", help="main")
 def main():
     print("!Grassengine!")
     print("""
@@ -49,4 +49,5 @@ def start():
         os.system(f"java -jar {jar}")
 
 if __name__ == "__main__":
+    main()
     app()
