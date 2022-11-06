@@ -5,15 +5,11 @@ os.system("git clone https://github.com/Grasscutters/Grasscutter")
 os.chdir(os.getcwd() + "\Grasscutter")
 os.system("del /Q start.cmd start_config.cmd")
 
-jar = os.listdir("Grasscutter")
-jar = jar.index("*.jar")
+jar = os.listdir()
 print(jar)
 
-if jar == None:
-    os.system(".\gradlew.bat")
-    os.system(".\gradlew jar")
-else:
-    pass
+os.system(".\gradlew.bat")
+os.system(".\gradlew jar")
 
 with open("start.cmd", "w") as file:
     file.write(f"java -jar {jar}")
