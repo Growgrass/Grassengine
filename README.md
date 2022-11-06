@@ -16,3 +16,14 @@ python main.py
 ```shell
 python main.py --help
 ```
+
+## 기능
+- Grasscutter 빌드
+- 리소스 다운
+- 실행
+
+## TODO
+- [X] Test
+- [ ] Test
+- [ ] 리소스 자동 적용
+- [ ] exe 빌드
