@@ -59,15 +59,28 @@ def proxy(port: int = typer.Argument(default=int(5555), help="포트 설정")):
     print("Proxy를 시작합니다...")
     
     os.system(r"reg import .\proxy.reg >nul 2>nul")
-    os.system(f"netsh winhttp set proxy 127.0.0.1:{port}")
+    print("Proxy On Success")
+    os.system(f"netsh winhttp set proxy 127.0.0.1:{port} >nul 2>nul")
     os.system(f"start mitmdump -s proxy.py -k -p {port}")
-    os.system(r"reg import .\D_proxy.reg >nul 2>nul")
 
 @app.command(name="start", help="예초기 와 프록시 실행")  # type: ignore
 def start(port: int = typer.Argument(default=int(5555), help="포트 설정")):
     grasscutter()
     os.chdir("../")
     proxy(port=port)
+
+@app.command(name="stop", help="종료")
+def stop():
+    os.chdir(os.getcwd() + "\src") # type: ignore
+
+    print("Grasscutter와 Proxy를 종료 합니다...")
+
+    os.system("TASKKILL /F /IM java.exe")
+    print("Grasscutter Kill Success")
+    os.system("TASKKILL /F /IM mitmdump.exe")
+    print("Proxy Kill Success")
+    os.system(r"reg import .\D_proxy.reg >nul 2>nul")
+    print("Proxy Off Success")
 
 if __name__ == "__main__":
     main()
