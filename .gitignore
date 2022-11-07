@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 src/Grasscutter_Resources
 src/Grasscutter
+
+Grasscutter_Resources
+Grasscutter
