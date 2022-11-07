@@ -57,8 +57,11 @@ def proxy(port: int = typer.Argument(default=int(5555), help="포트 설정")):
     os.chdir(os.getcwd() + "\src") # type: ignore
 
     print("Proxy를 시작합니다...")
-
+    
+    os.system(r"reg import .\proxy.reg >nul 2>nul")
+    os.system(f"netsh winhttp set proxy 127.0.0.1:{port}")
     os.system(f"start mitmdump -s proxy.py -k -p {port}")
+    os.system(r"reg import .\D_proxy.reg >nul 2>nul")
 
 @app.command(name="start", help="예초기 와 프록시 실행")  # type: ignore
 def start(port: int = typer.Argument(default=int(5555), help="포트 설정")):
