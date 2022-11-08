@@ -22,7 +22,7 @@ Grassengine 자체에 프록시 내장
 ### 관리자 권한 필수
 - 설치
 ```shell
-python setup.py
+python install.py
 ```
 - 도움말
 ```shell
