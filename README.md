@@ -19,6 +19,7 @@ __3.6 버전 이상이면 다됨__ (3.11은 vc c++ 14.x 필요)
 Grassengine 자체에 프록시 내장
 
 ## 실행
+### 관리자 권한 필수
 - 설치
 ```shell
 python setup.py
@@ -34,14 +35,11 @@ python main.py --help
 - 실행 (**Grasscutter, Proxy**)
 
 ## 주의사항
-```shell
-python main.py start
-```
-로 실행한 다음에 
+프록시는 콘솔내에서 Ctrl+C로 끄기 안그럼 인터넷 안됌
+- 인터넷이 안될때
 ```shell
 python main.py stop
 ```
-로 꼭 끄기 안그러면 인터넷 안됨.
 
 ## TODO
 - [X] Test
