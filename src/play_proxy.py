@@ -8,9 +8,9 @@ def main(port: int = int(5555)):
 
         os.system(r"reg import .\proxy.reg >nul 2>nul")
         print("Proxy On Success")
+        os.system("title Exit Ctrl+C")
         os.system(f"netsh winhttp set proxy 127.0.0.1:{port} >nul 2>nul")
         os.system(f"mitmdump -s proxy.py -k -p {port}")
-        os.system("title Exit Ctrl+C")
     except KeyboardInterrupt:
         os.system("TASKKILL /F /IM mitmdump.exe >nul 2>nul")
         print("Proxy Kill Success")

@@ -11,7 +11,7 @@ def main():
     Grasscutter 설치기
 
     만든이: Growgrass
-    버전: 2.0.0
+    버전: 2.0.2
     """)
 
 @app.command(name="setup", help="기본 설치")
