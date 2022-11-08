@@ -1,4 +1,5 @@
 import os, re, typer
+from src import play_proxy
 
 app = typer.Typer(name="Grassengine", help="Grassengine 도움말")
 
@@ -10,7 +11,7 @@ def main():
     Grasscutter 설치기
 
     만든이: Growgrass
-    버전: 1.0.0
+    버전: 2.0.0
     """)
 
 @app.command(name="setup", help="기본 설치")
@@ -54,14 +55,7 @@ def grasscutter():
 
 @app.command(name="proxy", help="프록시 실행")
 def proxy(port: int = typer.Argument(default=int(5555), help="포트 설정")):
-    os.chdir(os.getcwd() + "\src") # type: ignore
-
-    print("Proxy를 시작합니다...")
-    
-    os.system(r"reg import .\proxy.reg >nul 2>nul")
-    print("Proxy On Success")
-    os.system(f"netsh winhttp set proxy 127.0.0.1:{port} >nul 2>nul")
-    os.system(f"start mitmdump -s proxy.py -k -p {port}")
+    play_proxy.main(port=port)
 
 @app.command(name="start", help="예초기 와 프록시 실행")  # type: ignore
 def start(port: int = typer.Argument(default=int(5555), help="포트 설정")):
@@ -75,9 +69,9 @@ def stop():
 
     print("Grasscutter와 Proxy를 종료 합니다...")
 
-    os.system("TASKKILL /F /IM java.exe")
+    os.system("TASKKILL /F /IM java.exe >nul 2>nul")
     print("Grasscutter Kill Success")
-    os.system("TASKKILL /F /IM mitmdump.exe")
+    os.system("TASKKILL /F /IM mitmdump.exe >nul 2>nul")
     print("Proxy Kill Success")
     os.system(r"reg import .\D_proxy.reg >nul 2>nul")
     print("Proxy Off Success")
