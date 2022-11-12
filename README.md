@@ -46,3 +46,4 @@ python main.py stop
 - [ ] Test
 - [ ] 리소스 자동 적용
 - [ ] exe 빌드
+- [ ] 자바 자동 적용
