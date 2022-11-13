@@ -19,6 +19,10 @@ Grassengine 자체에 프록시 내장
 
 ## 실행
 ### 관리자 권한 필수
+- 관리자 권한 CMD 실행
+```shell
+Launcher.cmd
+```
 - 설치
 ```shell
 python install.py
