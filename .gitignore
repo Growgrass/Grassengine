@@ -127,8 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-src/Grasscutter_Resources
-src/Grasscutter
+src/Grasscutter_Resources/
+src/Grasscutter/
 
-Grasscutter_Resources
-Grasscutter
+## etc
+Grasscutter_Resources/
+Grasscutter/
+java/
