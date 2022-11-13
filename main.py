@@ -12,7 +12,7 @@ def main():
     Grasscutter 설치기
 
     만든이: Growgrass
-    버전: 3.0.0
+    버전: 3b.1a.tn
     """)
 
 @app.command(name="setup", help="기본 설치")
@@ -26,6 +26,8 @@ def setup(option: str = typer.Argument(default=None, help="option: Grasscutter, 
                 z.extractall("Java")
                 print("Extracted all")
             os.system("del /Q java_17.zip")
+            os.chdir(os.getcwd() + r"\Java\jdk-17.0.5\bin") # type: ignore
+            os.system("rename java.exe GE_JAVA.exe")
         except:
             print("Invalid file")
     if option == "Grasscutter":
@@ -69,7 +71,7 @@ def grasscutter():
         print("python main.py setup --Grasscutter 을 먼저 실행해 주세요.")
     else:
         os.chdir(os.getcwd() + "\Grasscutter") # type: ignore
-        os.system(f"start {java}\java.exe -jar {jar}") # type: ignore
+        os.system(f"start {java}\GE_JAVA.exe -jar {jar}") # type: ignore
 
 @app.command(name="proxy", help="프록시 실행")
 def proxy(port: int = typer.Argument(default=int(5555), help="포트 설정")):
@@ -87,7 +89,7 @@ def stop():
 
     print("Grasscutter와 Proxy를 종료 합니다...")
 
-    os.system("TASKKILL /F /IM java.exe >nul 2>nul")
+    os.system("TASKKILL /F /IM GE_JAVA.exe >nul 2>nul")
     print("Grasscutter Kill Success")
     os.system("TASKKILL /F /IM mitmdump.exe >nul 2>nul")
     print("Proxy Kill Success")
