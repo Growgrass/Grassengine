@@ -78,6 +78,8 @@ echo  [2] Resources
 echo.
 echo  [3] Proxy
 echo.
+echo  [4] Java
+echo.
 echo.
 echo -------------------------------------------------------------------------------------------------------------------------------
 echo.
@@ -86,3 +88,4 @@ set /p menu= [ 원하시는 작업 번호를 입력 후 엔터(Enter)키를 눌�
 if "%menu%" == "1" python main.py setup Grasscutter
 if "%menu%" == "2" python main.py setup Resources
 if "%menu%" == "3" python main.py setup Proxy
+if "%menu%" == "4" python main.py setup Java
