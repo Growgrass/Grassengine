@@ -27,7 +27,7 @@ echo ---------------------------------------------------------------------------
 echo.
 echo  Grassengine Launcher
 echo.
-echo  v1.0.0
+echo  v2.0.0
 echo.
 echo -------------------------------------------------------------------------------------------------------------------------------
 echo.
@@ -38,9 +38,9 @@ echo  [2] Stop
 echo.
 echo  [3] Setup
 echo.
-echo  [4] help
+echo  [4] Help
 echo.
-echo  [5] exit
+echo  [5] Exit
 echo.
 echo.
 echo -------------------------------------------------------------------------------------------------------------------------------
@@ -80,6 +80,8 @@ echo  [3] Proxy
 echo.
 echo  [4] Java
 echo.
+echo  [5] Exit
+echo.
 echo.
 echo -------------------------------------------------------------------------------------------------------------------------------
 echo.
@@ -89,3 +91,4 @@ if "%menu%" == "1" python main.py setup Grasscutter
 if "%menu%" == "2" python main.py setup Resources
 if "%menu%" == "3" python main.py setup Proxy
 if "%menu%" == "4" python main.py setup Java
+if "%menu%" == "5" exit
