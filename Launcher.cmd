@@ -53,13 +53,16 @@ if "%menu%" == "3" goto !setup
 if "%menu%" == "4" goto !help
 if "%menu%" == "5" exit
 goto main
+pause
 
 :!start
 cls
 python main.py start
+pause
 
 :!stop
 python main.py stop
+pause
 
 :!setup
 cls
@@ -92,3 +95,6 @@ if "%menu%" == "2" python main.py setup Resources
 if "%menu%" == "3" python main.py setup Proxy
 if "%menu%" == "4" python main.py setup Java
 if "%menu%" == "5" exit
+pause
+
+REM End.
